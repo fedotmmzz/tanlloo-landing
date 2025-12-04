@@ -1,0 +1,237 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanlloo — Smart Watch</title>
+
+  <!-- Tailwind v4 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .fade-up,
+    .fade-card {
+      opacity: 0;
+      transform: translateY(40px);
+      transition:
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out,
+        box-shadow 0.5s ease-out,
+        border-color 0.5s ease-out;
+    }
+
+    .fade-show { opacity: 1; transform: translateY(0); }
+
+    .fade-delay-1 { transition-delay: 0.12s; }
+    .fade-delay-2 { transition-delay: 0.24s; }
+    .fade-delay-3 { transition-delay: 0.36s; }
+
+    @keyframes floatSoft {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .float-soft { animation: floatSoft 10s ease-in-out infinite; }
+
+    .card-hover {
+      transition: transform .5s ease, box-shadow .5s ease, background .5s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px) scale(1.02);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.25);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.8);
+    }
+
+    .image-hover img {
+      transition: transform .8s ease, filter .8s ease;
+    }
+    .image-hover:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.08);
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white font-[Inter]">
+
+  <!-- HEADER -->
+  <header class="w-full fixed top-0 left-0 z-50 backdrop-blur-lg bg-black/40 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl tracking-widest font-semibold">TANLLOO</h1>
+
+      <nav class="hidden md:flex gap-8 text-sm tracking-wide">
+        <a href="#features" class="hover:text-gray-300">Features</a>
+        <a href="#design" class="hover:text-gray-300">Design</a>
+        <a href="#tech" class="hover:text-gray-300">Technology</a>
+      </nav>
+
+      <a href="#buy" class="px-4 py-2 text-sm bg-white text-black rounded-lg font-medium hover:bg-gray-200 transition">
+        Buy Now
+      </a>
+    </div>
+  </header>
+
+
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center justify-center px-6 parallax"
+           style="background-image: url('PLACEHOLDER-HERO.jpg');">
+    <div class="text-center max-w-4xl float-soft">
+      <h2 class="fade-up text-5xl md:text-7xl font-semibold leading-tight">
+        The Future On  
+        <span class="text-gray-400">Your Wrist.</span>
+      </h2>
+
+      <p class="fade-up fade-delay-1 text-lg mt-6 text-gray-300 max-w-2xl mx-auto">
+        Tanlloo SmartWatch — minimalist design, deep ecosystem, precision technology.
+      </p>
+
+      <a href="#features"
+         class="fade-up fade-delay-2 inline-block mt-10 px-6 py-3 bg-white text-black rounded-full text-sm hover:bg-gray-200 transition">
+        Explore Product
+      </a>
+    </div>
+  </section>
+
+
+
+  <!-- FEATURES (Убраны пустые карточки полностью) -->
+  <section id="features" class="py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-4xl md:text-5xl font-semibold mb-10 fade-up">Why Tanlloo?</h3>
+
+      <p class="text-gray-400 fade-up fade-delay-1 max-w-2xl">
+        Smart performance, elegant hardware and a seamless experience built for everyday use.
+      </p>
+    </div>
+  </section>
+
+
+
+  <!-- DESIGN -->
+  <section id="design" class="py-32 px-6 bg-white text-black">
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 class="text-4xl md:text-5xl font-semibold fade-up">A New Level of Design</h3>
+
+      <p class="text-gray-600 mt-6 max-w-2xl mx-auto fade-up fade-delay-1">
+        Clean lines. Smooth forms. Perfect integration of materials.
+      </p>
+
+      <div class="mt-16 fade-up fade-delay-2 image-hover overflow-hidden rounded-3xl inline-block">
+        <img src="35cb517a-083f-4a31-b661-89dcf9241fe3.png"
+             class="w-full h-[420px] md:h-[520px] object-cover rounded-3xl shadow-2xl">
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- TECHNOLOGY -->
+  <section id="tech" class="py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <h3 class="text-4xl md:text-5xl font-semibold mb-16 fade-up">Powered by Precision</h3>
+
+      <div class="grid md:grid-cols-2 gap-20">
+
+        <div class="fade-up fade-delay-1">
+          <h4 class="text-2xl font-medium mb-4">Smart OS 3.0</h4>
+          <p class="text-gray-300 text-lg">
+            Intelligent operating system optimized for smoothness and long battery life.
+          </p>
+
+          <h4 class="text-2xl font-medium mb-4 mt-10">AI Health Engine</h4>
+          <p class="text-gray-300 text-lg">
+            AI-driven analytics delivering more accurate insights and personalized recommendations.
+          </p>
+        </div>
+
+        <div class="fade-up fade-delay-2 image-hover overflow-hidden rounded-3xl">
+          <img src="ec545c7c-c82e-4408-aacd-211b8bebb450.png"
+               class="w-full h-[420px] object-cover rounded-3xl shadow-2xl">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- NEW MODELS (оставлены только фотки, удалены пустые нижние карточки) -->
+  <section class="py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <h3 class="text-4xl md:text-5xl font-semibold fade-up">We Are Working On New Models</h3>
+
+      <p class="fade-up fade-delay-1 text-gray-300 mt-6 max-w-2xl">
+        The next generation of Tanlloo comes in two elegant finishes.
+      </p>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-6 fade-up fade-delay-2">
+
+        <div class="rounded-2xl overflow-hidden bg-white/10 image-hover card-hover">
+          <img src="tanlloo-black-obsidian.png"
+               class="w-full aspect-[16/9] object-cover">
+          <div class="px-2 py-3 text-center text-sm text-gray-300">Black Obsidian</div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden bg-white/10 image-hover card-hover">
+          <img src="tanlloo-gray-metal.png"
+               class="w-full aspect-[16/9] object-cover">
+          <div class="px-2 py-3 text-center text-sm text-gray-300">Gray Metal</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- BUY -->
+  <section id="buy" class="py-32 px-6 bg-white text-black">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-4xl md:text-5xl font-semibold fade-up">Ready To Wear The Future?</h3>
+
+      <p class="fade-up fade-delay-1 text-gray-700 mt-6 max-w-xl mx-auto">
+        Tanlloo SmartWatch — available soon.
+      </p>
+
+      <a class="fade-up fade-delay-2 inline-block mt-10 px-10 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition">
+        Pre-Order
+      </a>
+    </div>
+  </section>
+
+
+
+  <!-- FOOTER -->
+  <footer class="py-10 text-center text-gray-500 text-sm">
+    © 2025 Tanlloo — All rights reserved.
+  </footer>
+
+
+
+  <!-- SCROLL ANIMATIONS -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('fade-show');
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-up, .fade-card')
+      .forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
